@@ -1,0 +1,64 @@
+html
+    +i18n('Home', 'Home', 'zh_cn')
+    +i18n('Albums', 'Albums', 'zh_cn')
+    +i18n('Categories', 'Categories', 'zh_cn')
+    +i18n('Archive', 'Archive', 'zh_cn')
+    +i18n('Tags', 'Tags', 'zh_cn')
+    +i18n('About', 'About', 'zh_cn')
+    +i18n('Links', 'Links', 'zh_cn')
+    head
+        +mobile_meta()
+        meta(name="keywords", content=site.configs.keywords.escaped)
+        meta(name="description", content=site.raw_content.escaped)
+        block title
+            title= request.args.s or post.title or tags.join('+') or category.title or site.title
+        load('fonts /template/assets/js/html5shiv.js')
+        load('fonts /template/assets/css/style.scss')
+
+    body.body
+        #body_wrapper
+            if site.configs.cover and has(site.configs.cover)
+                site_cover = site.configs.cover
+            else
+                site_cover = '/farbox_free_image.jpg'
+            site_cover = site_cover + '?height=428&width=1280&fixed=true'
+            div.clf.container
+                aside.aside
+                    .aside-wrap
+                        header.blog-header
+                            h1.blog-title
+                                a(href='/')= site.title
+                            h2.blog-desc
+                                p どうか、君と君を囲むこの世界が、
+                                p これからも幸せでありますように。
+                        ul.nav
+                            li
+                                a(href="/")= _('Home')
+                            if has('images')
+                                li
+                                    a(href='/album')= _('Albums')
+                            if not has('posts')
+                                    +redirect('/album')
+                            if has('categories')
+                                li
+                                    a(href='/categories')= _('Categories')
+                            if has('posts')
+                                li
+                                    a(href='/archive')= _('Archive')
+                            if site.tags
+                                li
+                                    a(href='/tags')= _('Tags')
+                        .copyright
+                            a(href="https://www.farbox.com", target="_blank") Powered By FarBox.com
+                            br
+                            a(href="http://www.i-nine.me", target="_blank") Designer NINE
+                            br
+                            a.admin(href="/admin") Admin
+                section#main.main
+                    block content
+
+            +load('jquery')
+            +load('script.coffee')
+            +load('fonts /template/assets/js/masonry.pkgd.min.js')
+            +load('fonts /template/assets/js/main.js')
+
