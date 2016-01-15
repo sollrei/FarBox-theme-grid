@@ -129,7 +129,6 @@ a {
    ===== */
 
 .post {
-
     .info {
         margin-top: 2.5em;
         height: 18px;
@@ -143,7 +142,7 @@ a {
             font-size: 1.1em;
         }
         span {
-            font-family: droid-sans, stheiti, 'microsoft yahei', sans-serif;;
+            font-family: droid-sans, stheiti, 'microsoft yahei', sans-serif;
         }
         .date {
             margin: 0 1.5em 0 0;
@@ -161,7 +160,8 @@ a {
             }
         }
 
-        .go_editor, .show_raw {
+        .go_editor,
+        .show_raw {
             color: $font_color2;
             margin-right: 10px;
             &:hover {
@@ -172,6 +172,7 @@ a {
                 top: 1px;
             }
         }
+
         .go_editor {
             margin-right: 25px;
         }

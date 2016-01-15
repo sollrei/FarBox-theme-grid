@@ -1,5 +1,7 @@
 var gulp = require('gulp'),
     stylus = require('gulp-stylus'),
+    cssmin = require('gulp-minify-css'),
+    rename = require('gulp-rename'),
     sass = require('gulp-ruby-sass');
 
 
@@ -15,6 +17,8 @@ gulp.task('sass', function () {
         .on('error', function (err) {
             console.error('Error', err.message);
         })
+        .pipe(cssmin())
+        .pipe(rename({ suffix: '.min' }))
         .pipe(gulp.dest('./assets/css/'));
 });
 
