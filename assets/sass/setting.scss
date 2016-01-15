@@ -1,0 +1,49 @@
+
+// value settings
+$font_color: #191919;
+$bg1: #fff;
+$bg2: #fafcfc;
+$primary: #58b798;
+
+// related colors
+$font_color2: lighten($font_color, 45%);
+$bg2: darken($bg1, 3.6%);
+$line_color: lighten($font_color, 80%);
+$line_color2: lighten($font_color, 82%);
+
+// fixed colors
+$shadow_color: rgba(0, 0, 0, 0.18);
+$easing1: cubic-bezier(0.15, 0.95, 0.41, 0.95);
+
+// responsive break points
+$phone_landscape-min: 33.37em;
+//534px
+$phone_landscape-max: 47.99em;
+//767px
+
+$space: 30px;
+
+// functions
+@mixin box-sizing($value) {
+    box-sizing: $value;
+    -webkit-box-sizing: $value;
+}
+
+@mixin transform($value) {
+    transform: $value;
+    -webkit-transform: $value;
+}
+
+@mixin aColor($value) {
+    color: $value;
+    &:active {
+        color: $value;
+    }
+    &:visited {
+        color: $value;
+    }
+    &:hover {
+        color: lighten($value, 5%);
+        border-bottom: 1px solid lighten($value, 5%);
+    }
+}

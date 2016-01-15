@@ -13,7 +13,7 @@ html
         block title
             title= request.args.s or post.title or tags.join('+') or category.title or site.title
         load('fonts /template/assets/js/html5shiv.js')
-        load('fonts /template/assets/css/style.scss')
+        load('fonts /template/assets/css/style.css')
 
     body.body
         #body_wrapper
@@ -59,6 +59,7 @@ html
 
             +load('jquery')
             +load('script.coffee')
+            +load('fonts /template/assets/js/imagesloaded.pkgd.min.js')
             +load('fonts /template/assets/js/masonry.pkgd.min.js')
             +load('fonts /template/assets/js/main.js')
 

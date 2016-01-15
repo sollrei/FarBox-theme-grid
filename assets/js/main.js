@@ -6,10 +6,11 @@
  *
  */
 $(function () {
-
-    $('.grid').masonry({
-        itemSelector: '.grid-item',
-        columnWidth: '.grid-sizer',
-        percentPosition: true
+    $('#main').imagesLoaded(function () {
+        $('.grid').masonry({
+            itemSelector: '.grid-item',
+            columnWidth: '.grid-sizer',
+            percentPosition: true
+        });
     });
 });

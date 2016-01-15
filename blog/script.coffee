@@ -35,7 +35,7 @@ next_page = 2
         if post_dom.find('img').length
             post_dom.addClass('img')
             if getWinSize() < 3 #如果是手机，将第一张图片作为背景图
-                post_dom.css("background-image", "url(" + post_dom.find("img").attr("src") + ")")
+#                post_dom.css("background-image", "url(" + post_dom.find("img").attr("src") + ")")
             else #否则清除背景图
                 post_dom.removeAttr('style')
         else
@@ -44,7 +44,7 @@ next_page = 2
     if getWinSize() < 3 # 移动端
         for img in $(".list .img")
             img_dom = $(img)
-            img_dom.css("background-image", "url(" + img_dom.find("img").attr("src") + ")");
+#            img_dom.css("background-image", "url(" + img_dom.find("img").attr("src") + ")");
     else
         $(".list .img").removeAttr("style")
 

@@ -1,241 +1,14 @@
-//*********************************************************************//
-//                              settings                               //
-//*********************************************************************//
+@import "./setting.scss";
 
-// value settings
-$font_color: #191919;
-$bg1: #fff;
-$bg2: #fafcfc;
-$primary: #58b798;
+@import "./font.scss";
 
-// related colors
-$font_color2: lighten($font_color, 45%);
-$bg2: darken($bg1, 3.6%);
-$line_color: lighten($font_color, 80%);
-$line_color2: lighten($font_color, 82%);
+@import "./reset.scss";
 
-// fixed colors
-$shadow_color: rgba(0, 0, 0, 0.18);
-$easing1: cubic-bezier(0.15, 0.95, 0.41, 0.95);
+@import "./base.scss";
 
-// responsive break points
-$phone_landscape-min: 33.37em;
-//534px
-$phone_landscape-max: 47.99em;
-//767px
-
-$space: 30px;
-
-// functions
-@mixin box-sizing($value) {
-    box-sizing: $value;
-    -webkit-box-sizing: $value;
-}
-
-@mixin transform($value) {
-    transform: $value;
-    -webkit-transform: $value;
-}
-
-@mixin aColor($value) {
-    color: $value;
-    &:active {
-        color: $value;
-    }
-    &:visited {
-        color: $value;
-    }
-    &:hover {
-        color: lighten($value, 5%);
-        border-bottom: 1px solid lighten($value, 5%);
-    }
-}
-
-@font-face {
-    font-family: 'quicksand';
-    src: url(../fonts/Quicksand-Light.ttf);
-}
-
-//*********************************************************************//
-//                               global                                //
-//*********************************************************************//
-
-body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, code, form, fieldset, legend, input, textarea, p, blockquote, th, td, hr, button, article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
-    margin: 0;
-    padding: 0;
-}
-
-article,
-aside,
-details,
-figcaption,
-figure,
-footer,
-header,
-hgroup,
-menu,
-nav,
-section {
-    display: block;
-}
-
-audio,
-canvas,
-video {
-    display: inline-block
-}
-
-body, button, input, select, textarea {
-    font: 12px / 1.5 tahoma, arial, "Hiragino Sans GB", \5b8b\4f53;
-}
-
-input, select, textarea {
-    font-size: 100%;
-}
-
-table {
-    border-collapse: collapse;
-    border-spacing: 0;
-}
-
-th {
-    text-align: inherit;
-}
-
-fieldset, img {
-    border: 0;
-}
-
-iframe {
-    display: block;
-}
-
-abbr, acronym {
-    border: 0;
-    font-variant: normal;
-}
-
-del {
-    text-decoration: line-through;
-}
-
-address, caption, cite, code, dfn, em, th, var {
-    font-style: normal;
-    font-weight: 500;
-}
-
-ol, ul {
-    list-style: none;
-}
-
-caption, th {
-    text-align: left;
-}
-
-h1, h2, h3, h4, h5, h6 {
-    font-size: 100%;
-    font-weight: 500;
-}
-
-q:before, q:after {
-    content: '';
-}
-
-sub, sup {
-    font-size: 75%;
-    line-height: 0;
-    position: relative;
-    vertical-align: baseline;
-}
-
-sup {
-    top: -0.5em;
-}
-
-sub {
-    bottom: -0.25em;
-}
-
-a {
-    color: #333;
-}
-
-a:hover {
-    color: #ed5f01;
-    text-decoration: underline;
-}
-
-ins, a {
-    text-decoration: none;
-}
-
-code,
-kbd,
-pre,
-samp {
-    font-family: monospace, serif;
-    font-size: 1em;
-}
-
-.clearfix:after,
-.layout:after,
-.clf:after {
-    visibility: hidden;
-    display: block;
-    font-size: 0;
-    content: '.';
-    clear: both;
-    height: 0;
-}
-
-.clearfix,
-.layout,
-.clf {
-    zoom: 1;
-}
-
-.clear {
-    font-size: 0;
-    line-height: 0;
-    height: 0;
-    clear: both;
-    visibility: hidden;
-    overflow: hidden;
-}
-
-.fn-hide {
-    display: none;
-}
-
-.fl,
-.fr {
-    display: inline;
-}
-
-.fl {
-    float: left;
-}
-
-.fr {
-    float: right;
-}
-
-.fn-text-overflow {
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-}
-
-.fn-rmb {
-    font-family: arial;
-    font-style: normal;
-    padding-right: 4px;
-}
-
-.fn-webkit-adjust {
-    -webkit-text-size-adjust: none;
-}
-
+/* =====
+   Main
+   ===== */
 * {
     @include box-sizing (content-box);
 }
@@ -256,56 +29,6 @@ body {
 a {
     @include aColor($primary);
     text-decoration: none;
-}
-
-input, textarea, button {
-    font-family: "droid-sans", "stheiti", "microsoft yahei", sans-serif;
-}
-
-ul, li {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-}
-
-::selection {
-    background: $primary;
-    color: #fff;
-}
-
-::-moz-selection {
-    background: $primary;
-    color: #fff;
-}
-
-.hidden {
-    display: none;
-}
-
-.clearfix:after,
-.layout:after,
-.clf:after {
-    visibility: hidden;
-    display: block;
-    font-size: 0;
-    content: '.';
-    clear: both;
-    height: 0;
-}
-
-.clearfix,
-.layout,
-.clf {
-    zoom: 1;
-}
-
-.clear {
-    font-size: 0;
-    line-height: 0;
-    height: 0;
-    clear: both;
-    visibility: hidden;
-    overflow: hidden;
 }
 
 #on_loading {
@@ -346,23 +69,19 @@ ul, li {
     width: 50%;
 }
 
-//*********************************************************************//
-//                               aside                                 //
-//*********************************************************************//
-
 /* =====
-   default
+   aside
    ===== */
 
 .aside {
     @extend .box;
     width: 400px;
-    font: 14px/1.7 quicksand, sans-serif;
     height: 100%;
-    z-index: 100;
     position: fixed;
     left: 0;
     top: 0;
+    z-index: 100;
+    font: 14px/1.7 quicksand, sans-serif;
 
     .blog-header {
         padding-top: 20px;
@@ -381,28 +100,6 @@ ul, li {
 
     .aside-wrap {
         padding: 20px 30px;
-    }
-
-    .side-hd {
-        position: relative;
-        height: 60px;
-        margin: 20px 0;
-        text-align: center;
-        font-size: 16px;
-        font-weight: 700;
-        text-transform: capitalize;
-    }
-
-    .side-hd:after {
-        position: absolute;
-        left: 0;
-        top: 11px;
-        content: '';
-        display: block;
-        width: 100%;
-        height: 3px;
-        background: #f1f1f1;
-        z-index: 0;
     }
 
     .nav {
@@ -425,26 +122,20 @@ ul, li {
         bottom: 20px;
         right: 20px;
     }
-
-    .post-count {
-        margin-left: 5px;
-        font-size: 12px;
-    }
-
 }
 
-//*********************************************************************//
-//                       post in list or detail                        //
-//*********************************************************************//
+/* =====
+   post in list or detail
+   ===== */
 
 .post {
 
     .info {
-        color: $font_color2;
+        margin-top: 2.5em;
         height: 18px;
+        color: $font_color2;
         line-height: 1.5;
         font-size: 0.75em;
-        margin-top: 2.5em;
         i {
             margin-right: 5px;
             position: relative;
@@ -569,7 +260,9 @@ ul, li {
 
 }
 
-//******************************  post detail *******************************//
+/* =====
+   post detail
+   ===== */
 
 .detail {
     width: 60%;
@@ -637,8 +330,9 @@ ul, li {
     padding: $space;
 }
 
-//******************************  post list  starts *******************************//
-// pad and pc
+/* =====
+   post list
+   ===== */
 .list {
 
     .post {
@@ -660,11 +354,6 @@ ul, li {
             }
         }
     }
-    .post_body {
-        img {
-            max-width: 100%;
-        }
-    }
 
     .content {
         @extend .box;
@@ -678,9 +367,10 @@ ul, li {
 
 }
 
-//****************************** post list ends *******************************//
 
-/* for categories*/
+/* =====
+   for categories
+   ===== */
 
 .categories {
     list-style: none;
@@ -740,11 +430,13 @@ ul, li {
     }
 }
 
-/* for archive and tags*/
+/* =====
+   for archive and tags
+   ===== */
 .list_with_title {
     font-size: 16px;
     background: $bg1;
-    @extend .border_container;
+
     padding: 1.5em 3em;
     margin: 0;
 
@@ -811,7 +503,9 @@ ul, li {
 
 }
 
-/* paginator */
+/* =====
+   paginator
+   ===== */
 .pager {
     position: relative;
     height: 57px;
@@ -847,6 +541,10 @@ ul, li {
         left: 0;
     }
 }
+
+/* =====
+   media query
+   ===== */
 
 @media screen and (max-width: 1600px) {
     .aside {
@@ -889,6 +587,7 @@ ul, li {
                 padding: 0 10px;
             }
         }
+
         .blog-title {
             margin: 10px 0;
         }
