@@ -43,7 +43,6 @@ $space: 30px;
         color: $value;
     }
     &:hover {
-        color: lighten($value, 5%);
-        border-bottom: 1px solid lighten($value, 5%);
+        color: lighten($value, 10%);
     }
 }

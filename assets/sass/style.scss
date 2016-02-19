@@ -75,16 +75,18 @@ a {
 
 .aside {
     @extend .box;
-    width: 400px;
+    width: 370px;
     height: 100%;
     position: fixed;
     left: 0;
     top: 0;
     z-index: 100;
+
     font: 14px/1.7 quicksand, sans-serif;
 
     .blog-header {
         padding-top: 20px;
+        text-align: right;
     }
 
     .blog-title {
@@ -105,12 +107,12 @@ a {
     .nav {
         padding-top: 20px;
         line-height: 40px;
-        border-bottom: 1px solid #ddd;
+        //border-bottom: 1px solid #ddd;
     }
 
     .nav li {
         height: 40px;
-        border-top: 1px solid #ddd;
+        //border-top: 1px solid #ddd;
         text-align: right;
     }
 
@@ -182,9 +184,18 @@ a {
 .post_cover {
     padding-top: 10px;
     padding-bottom: 10px;
+    margin: -30px -30px 0;
+
+    a {
+        display: block;
+        line-height: 1;
+        &:hover {
+            opacity: .9;
+        }
+    }
 
     img {
-        max-width: 100%;
+        width: 100%;
     }
 }
 
@@ -268,6 +279,12 @@ a {
         border-bottom: 1px solid #eee;
     }
 
+}
+
+.post_list {
+    p {
+        margin-bottom: .4em;
+    }
 }
 
 /* =====
@@ -561,7 +578,7 @@ a {
         width: 300px;
     }
     .main {
-        margin-left: 300px;
+        margin-left: 330px;
     }
     .detail {
         width: 60%;
@@ -581,7 +598,7 @@ a {
     }
 }
 
-@media screen and (max-width: 1000px) {
+@media screen and (max-width: 980px) {
     .aside {
         position: static;
         width: 100%;
@@ -595,6 +612,10 @@ a {
                 border: 0;
                 padding: 0 10px;
             }
+        }
+
+        .blog-header {
+            text-align: center;
         }
 
         .blog-title {
