@@ -34,6 +34,8 @@ html
                         ul.nav
                             li
                                 a(href="/")= _('Home')
+                            li
+                                a(href='/about') About
                             if has('images')
                                 li
                                     a(href='/album')= _('Albums')
@@ -51,7 +53,7 @@ html
                         .copyright
                             a(href="https://www.farbox.com", target="_blank") Powered By FarBox.com
                             br
-                            a(href="http://www.i-nine.me", target="_blank") Designer NINE
+                            a(href="http://www.i-nine.me/", target="_blank") Designer NINE
                             br
                             a.admin(href="/admin") Admin
                 section#main.main
