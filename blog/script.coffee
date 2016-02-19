@@ -34,10 +34,10 @@ next_page = 2
 
         if post_dom.find('img').length
             post_dom.addClass('img')
-            if getWinSize() < 3 #如果是手机，将第一张图片作为背景图
+#            if getWinSize() < 3 #如果是手机，将第一张图片作为背景图
 #                post_dom.css("background-image", "url(" + post_dom.find("img").attr("src") + ")")
-            else #否则清除背景图
-                post_dom.removeAttr('style')
+#            else #否则清除背景图
+#                post_dom.removeAttr('style')
         else
             post_dom.addClass('text')
 
