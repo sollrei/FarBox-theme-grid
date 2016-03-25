@@ -12,5 +12,8 @@ $(function () {
             columnWidth: '.grid-sizer',
             percentPosition: true
         });
+
+        $('.loader-wrap').hide();
     });
+
 });
