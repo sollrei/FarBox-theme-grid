@@ -598,6 +598,16 @@ a {
     animation: a 1.5s cubic-bezier(.22,.61,.36,1) infinite both;
 }
 
+@keyframes a {
+    20% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+        transform: scale(2.5);
+    }
+}
+
 /* =====
    media query
    ===== */
