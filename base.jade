@@ -34,28 +34,22 @@ html
                         ul.nav
                             li
                                 a(href="/")= _('Home')
-                            li
-                                a(href='/about') About
                             if has('images')
                                 li
-                                    a(href='/album')= _('Albums')
-                            if not has('posts')
-                                    +redirect('/album')
-                            if has('categories')
-                                li
-                                    a(href='/categories')= _('Categories')
-                            if has('posts')
-                                li
-                                    a(href='/archive')= _('Archive')
+                                    a(href='/album')= _('album')
                             if site.tags
                                 li
                                     a(href='/tags')= _('Tags')
+                            li
+                                a(href='/links') Links
+                            li
+                                a(href='http://weibo.com/sollrei?is_all=1') Weibo
+                            li
+                                a(href='http://is9is9.lofter.com/') Lofter
                         .copyright
                             a(href="https://www.farbox.com", target="_blank") Powered By FarBox.com
                             br
                             a(href="http://www.i-nine.me/", target="_blank") Designer NINE
-                            br
-                            a.admin(href="/admin") Admin
                 section#main.main
                     block content
             div.loader-wrap

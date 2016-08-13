@@ -1,6 +1,4 @@
-
 *.scssc
-
 .idea/
-
 *.xml
+.idea

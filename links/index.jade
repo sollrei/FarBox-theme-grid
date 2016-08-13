@@ -1,0 +1,12 @@
+extends base
+block title
+    title= post.title + " - " + site.title
+block content
+    .detail
+        .post
+            .content
+                h1.title 友链了啊友链
+                .post_body
+                    p.link-item
+                        a(href="http://souqiba.com/",target="_blank") pais虎吉桑
+            include include/comments.jade

@@ -6,7 +6,7 @@
  *
  */
 $(function () {
-    $('#main').imagesLoaded(function () {
+    // $('#main').imagesLoaded(function () {
         $('.grid').masonry({
             itemSelector: '.grid-item',
             columnWidth: '.grid-sizer',
@@ -14,6 +14,6 @@ $(function () {
         });
 
         $('.loader-wrap').hide();
-    });
+    // });
 
 });
