@@ -2,7 +2,7 @@
  *
  *
  * @update: 16/1/13
- * @author: zhangdan
+ * 
  *
  */
 $(function () {
